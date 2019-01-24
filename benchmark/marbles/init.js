@@ -18,7 +18,9 @@ module.exports.info  = 'Creating marbles.';
 
 let txIndex = 0;
 let colors = ['red', 'blue', 'green', 'black', 'white', 'pink', 'rainbow'];
-let owners = ['Alice', 'Bob', 'Claire', 'David'];
+let owners = ['Alice', 'Bob', 'Claire', 'David', 'Eugene','Franklin',
+              'George', 'Haris','Indro','Jacob','Kalis','Leius','Manro','Necolus','Oustin','Polard',
+              'Qualis','Rover','Sampraus','Trump','Umbro','Vettori','Willium','Xavier','Zeck'];
 let bc, contx;
 module.exports.init = function(blockchain, context, args) {
     bc = blockchain;

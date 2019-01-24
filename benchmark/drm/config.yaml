@@ -4,25 +4,93 @@ test:
   description: Benchmark for DRM scenario
   clients:
     type: local
-    number: 1
+    number: 5
   rounds:
   - label: publish
     txNumber:
-    - 1
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
     arguments:
       itemBytes: 2048000
     rateControl:
     - type: fixed-rate
       opts:
-        tps: 1
+        tps: 50
+    - type: fixed-rate
+      opts:
+        tps: 100
+    - type: fixed-rate
+      opts:
+        tps: 150
+    - type: fixed-rate
+      opts:
+        tps: 200
+    - type: fixed-rate
+      opts:
+        tps: 250
     callback: benchmark/drm/publish.js
+    - type: fixed-rate
+      opts:
+        tps: 300
+    - type: fixed-rate
+      opts:
+        tps: 350
+    - type: fixed-rate
+      opts:
+        tps: 400
+    - type: fixed-rate
+      opts:
+        tps: 500
+    - type: fixed-rate
+      opts:
+        tps: 600
   - label: query
     txNumber:
-    - 1
+    - 5000
+    - 5000
+    - 5000
+    - 5000
+    - 5000
+    - 5000
+    - 5000
+    - 5000
+    - 5000
     rateControl:
     - type: fixed-rate
       opts:
-        tps: 1
+        tps: 100
+    - type: fixed-rate
+      opts:
+        tps: 200
+    - type: fixed-rate
+      opts:
+        tps: 300
+    - type: fixed-rate
+      opts:
+        tps: 400
+    - type: fixed-rate
+      opts:
+        tps: 500
+    - type: fixed-rate
+      opts:
+        tps: 600
+    - type: fixed-rate
+      opts:
+        tps: 700
+    - type: fixed-rate
+      opts:
+        tps: 800
+    - type: fixed-rate
+      opts:
+        tps: 900
     callback: benchmark/drm/query.js
 monitor:
   type: docker

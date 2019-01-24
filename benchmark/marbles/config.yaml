@@ -6,31 +6,87 @@ test:
   rounds:
   - label: init
     txNumber:
-    - 500
-    - 500
-    - 500
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
     rateControl:
-    - type: fixed-rate
-      opts:
-        tps: 25
     - type: fixed-rate
       opts:
         tps: 50
     - type: fixed-rate
       opts:
-        tps: 75
+        tps: 100
+    - type: fixed-rate
+      opts:
+        tps: 150
+    - type: fixed-rate
+      opts:
+        tps: 200
+    - type: fixed-rate
+      opts:
+        tps: 250
+    - type: fixed-rate
+      opts:
+        tps: 300
+    - type: fixed-rate
+      opts:
+        tps: 350
+    - type: fixed-rate
+      opts:
+        tps: 400
+    - type: fixed-rate
+      opts:
+        tps: 500
+    - type: fixed-rate
+      opts:
+        tps: 600
     callback: benchmark/marbles/init.js
   - label: query
     txNumber:
-    - 15
-    - 15
+    - 5000
+    - 5000
+    - 5000
+    - 5000
+    - 5000
+    - 5000
+    - 5000
+    - 5000
+    - 5000
     rateControl:
     - type: fixed-rate
       opts:
-        tps: 5
+        tps: 100
     - type: fixed-rate
       opts:
-        tps: 5
+        tps: 200
+    - type: fixed-rate
+      opts:
+        tps: 300
+    - type: fixed-rate
+      opts:
+        tps: 400
+    - type: fixed-rate
+      opts:
+        tps: 500
+    - type: fixed-rate
+      opts:
+        tps: 600
+    - type: fixed-rate
+      opts:
+        tps: 700
+    - type: fixed-rate
+      opts:
+        tps: 800
+    - type: fixed-rate
+      opts:
+        tps: 900
     callback: benchmark/marbles/query.js
 monitor:
   type:
