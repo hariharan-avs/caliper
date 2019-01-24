@@ -9,9 +9,16 @@ test:
   rounds:
   - label: open
     txNumber:
-    - 1000
-    - 1000
-    - 1000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
     rateControl:
     - type: fixed-rate
       opts:
@@ -22,13 +29,41 @@ test:
     - type: fixed-rate
       opts:
         tps: 150
+    - type: fixed-rate
+      opts:
+        tps: 200
+    - type: fixed-rate
+      opts:
+        tps: 250
+    - type: fixed-rate
+      opts:
+        tps: 300
+    - type: fixed-rate
+      opts:
+        tps: 350
+    - type: fixed-rate
+      opts:
+        tps: 400
+    - type: fixed-rate
+      opts:
+        tps: 500
+    - type: fixed-rate
+      opts:
+        tps: 600
     arguments:
       money: 10000
     callback: benchmark/simple/open.js
   - label: query
     txNumber:
-    - 1000
-    - 1000
+    - 5000
+    - 5000
+    - 5000
+    - 5000
+    - 5000
+    - 5000
+    - 5000
+    - 5000
+    - 5000
     rateControl:
     - type: fixed-rate
       opts:
@@ -36,6 +71,27 @@ test:
     - type: fixed-rate
       opts:
         tps: 200
+    - type: fixed-rate
+      opts:
+        tps: 300
+    - type: fixed-rate
+      opts:
+        tps: 400
+    - type: fixed-rate
+      opts:
+        tps: 500
+    - type: fixed-rate
+      opts:
+        tps: 600
+    - type: fixed-rate
+      opts:
+        tps: 700
+    - type: fixed-rate
+      opts:
+        tps: 800
+    - type: fixed-rate
+      opts:
+        tps: 900
     callback: benchmark/simple/query.js
 monitor:
   type:
