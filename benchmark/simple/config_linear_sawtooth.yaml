@@ -1,0 +1,115 @@
+---
+test:
+  name: simple
+  description: This is an example benchmark for caliper, to test the backend DLT's
+    performance with simple account opening & querying transactions
+  clients:
+    type: local
+    number: 5
+  rounds:
+  - label: open
+    txNumber:
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    rateControl:
+    - type: fixed-rate
+      opts:
+        tps: 40
+    - type: fixed-rate
+      opts:
+        tps: 60
+    - type: fixed-rate
+      opts:
+        tps: 80
+    - type: fixed-rate
+      opts:
+        tps: 100
+    - type: fixed-rate
+      opts:
+        tps: 120
+    - type: fixed-rate
+      opts:
+        tps: 140
+    - type: fixed-rate
+      opts:
+        tps: 160
+    - type: fixed-rate
+      opts:
+        tps: 180
+    - type: fixed-rate
+      opts:
+        tps: 200
+    - type: fixed-rate
+      opts:
+        tps: 220
+    arguments:
+      money: 10000
+      txnPerBatch: 40
+    callback: benchmark/simple/open.js
+  - label: query
+    txNumber:
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    - 10000
+    rateControl:
+    - type: fixed-rate
+      opts:
+        tps: 40
+    - type: fixed-rate
+      opts:
+        tps: 60
+    - type: fixed-rate
+      opts:
+        tps: 80
+    - type: fixed-rate
+      opts:
+        tps: 100
+    - type: fixed-rate
+      opts:
+        tps: 120
+    - type: fixed-rate
+      opts:
+        tps: 140
+    - type: fixed-rate
+      opts:
+        tps: 160
+    - type: fixed-rate
+      opts:
+        tps: 180
+    - type: fixed-rate
+      opts:
+        tps: 200
+    - type: fixed-rate
+      opts:
+        tps: 220
+    arguments:
+      money: 10000
+      txnPerBatch: 40
+    callback: benchmark/simple/query.js
+monitor:
+  type:
+  - docker
+  - process
+  docker:
+    name:
+    - all
+  process:
+  - command: node
+    arguments: local-client.js
+    multiOutput: avg
+  interval: 1

@@ -1,0 +1,2 @@
+info: [bench-flow.js]: ####### Caliper Test #######
+info: [bench-flow.js]: Executing command: docker-compose -f network/fabric-v1.4/3org2peergoleveldb/docker-compose-tls.yaml up -d;sleep 3s
