@@ -1,16 +1,12 @@
 {
   "caliper": {
-    "blockchain": "fabric",
-    "command" : {
-      "start": "docker-compose -f network/fabric-v1.4/2org2peergoleveldb/docker-compose-tls.yaml up -d;sleep 3s",
-      "end" : "docker-compose -f network/fabric-v1.4/2org2peergoleveldb/docker-compose-tls.yaml down;docker rm $(docker ps -aq);docker rmi $(docker images dev* -q)"
-    }
+    "blockchain": "fabric"
   },
   "fabric": {
     "cryptodir": "network/fabric-v1.4/config/crypto-config",
     "network": {
       "orderer": {
-        "url": "grpcs://localhost:7050",
+        "url": "grpcs://10.5.0.8:7050",
         "mspid": "OrdererMSP",
         "msp": "network/fabric-v1.4/config/crypto-config/ordererOrganizations/example.com/msp/",
         "server-hostname": "orderer.example.com",
@@ -21,18 +17,18 @@
         "mspid": "Org1MSP",
         "msp": "network/fabric-v1.4/config/crypto-config/peerOrganizations/org1.example.com/msp/",
         "ca": {
-          "url": "https://localhost:7054",
+          "url": "https://10.5.0.8:7054",
           "name": "ca.org1.example.com"
         },
         "peer1": {
-          "requests": "grpcs://localhost:7051",
-          "events": "grpcs://localhost:7053",
+          "requests": "grpcs://10.5.0.8:7051",
+          "events": "grpcs://10.5.0.8:7053",
           "server-hostname": "peer0.org1.example.com",
           "tls_cacerts": "network/fabric-v1.4/config/crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt"
         },
         "peer2": {
-          "requests": "grpcs://localhost:7057",
-          "events": "grpcs://localhost:7059",
+          "requests": "grpcs://10.5.0.8:7057",
+          "events": "grpcs://10.5.0.8:7059",
           "server-hostname": "peer1.org1.example.com",
           "tls_cacerts": "network/fabric-v1.4/config/crypto-config/peerOrganizations/org1.example.com/peers/peer1.org1.example.com/tls/ca.crt"
         }
@@ -42,18 +38,18 @@
         "mspid": "Org2MSP",
         "msp": "network/fabric-v1.4/config/crypto-config/peerOrganizations/org2.example.com/msp/",
         "ca": {
-          "url": "https://localhost:8054",
+          "url": "https://10.5.0.8:8054",
           "name": "ca.org2.example.com"
         },
         "peer1": {
-          "requests": "grpcs://localhost:8051",
-          "events": "grpcs://localhost:8053",
+          "requests": "grpcs://10.5.0.8:8051",
+          "events": "grpcs://10.5.0.8:8053",
           "server-hostname": "peer0.org2.example.com",
           "tls_cacerts": "network/fabric-v1.4/config/crypto-config/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt"
         },
         "peer2": {
-          "requests": "grpcs://localhost:8057",
-          "events": "grpcs://localhost:8059",
+          "requests": "grpcs://10.5.0.8:8057",
+          "events": "grpcs://10.5.0.8:8059",
           "server-hostname": "peer1.org2.example.com",
           "tls_cacerts": "network/fabric-v1.4/config/crypto-config/peerOrganizations/org2.example.com/peers/peer1.org2.example.com/tls/ca.crt"
         }
